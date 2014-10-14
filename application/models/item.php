@@ -11,7 +11,7 @@
 		public function addProduct($data)
 		{
 			$query = 'INSERT INTO items (name, description, price, url, created_at, updated_at) VALUES (?, ?, ?, ?, NOW(), NOW())';
-			$values = array($data['name'], $data['description'], $data['price'], "/assets/images/thumbnails/uploads/{$this->session->userdata['file_name']}");
+			$values = array($data['name'], $data['description'], $data['price'], "/assets/images/thumbnails/uploads/{$data['file_name']}");
 			return $this->db->query($query, $values);
 		}
 

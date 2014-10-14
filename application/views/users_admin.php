@@ -10,25 +10,10 @@
 		<h1>Admin Page</h1>
 		<h2 class='green'>Welcome back <?= $this->session->userdata('first_name'); ?>!</h2>
 		<p class='right'><button><a class='button' href='/users/logout'>Log Out</a></button></p>
-		<h3 class='green'><?= $this->session->flashdata('message'); ?></h3>
-		<h3>ADD NEW PRODUCT TO DATABASE</h3>
-		<h3>Step 1: Upload a Photo</h3>
-		<?php
-			if (!empty($error))
-			{
-				echo "<span class='red'>{$error}</span>";
-			}
-			if (!empty($upload_data))
-			{
-				echo "<p class='green'>You have successfully uploaded a file!</p>";
-			}
-			echo form_open_multipart('/upload/do_upload', 'method="post"');
-		?>
-			<input type="file" name="userfile" size="20">
-			<input type="submit" value="upload">
-		</form>
-		<h3>Step 2: Enter Product Info</h3>
-		<form action ='/items/addProduct' method='post'>
+		<h3>Add New Product to Database</h3>
+		<p class='green'><?= $this->session->flashdata('message'); ?></p>
+		<span class='red'><?= $this->session->flashdata('error'); ?></span>
+		<form action ='/items/addProduct' enctype='multipart/form-data' method='post'>
 			<div class='row'>
 				<label for='name'>Product Name: </label>
 				<input type='text' name='name'>
@@ -41,6 +26,7 @@
 				<label for='price'>Product Price: </label>
 				<input type='text' name='price'>
 			</div>
+			<input type="file" name="userfile" size="20">
 			<input type='submit' value='Enter into Database'>
 		</form>
 	</div>
@@ -66,7 +52,7 @@
 						<td>{$item['description']}</td>
 						<td>\${$item['price']}</td>
 						<td>{$date}</td>
-						<td><a href='/items/destroy/{$item['id']}'>Remove</a></td>
+						<td><a href='/items/confirm_remove/{$item['id']}'>Remove</a></td>
 					</tr>";
 			}
 			echo "</tbody>
