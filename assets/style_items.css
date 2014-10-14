@@ -1,0 +1,54 @@
+* {
+	font-family: sans-serif, verdana, arial;
+}
+
+#wrapper {
+	height: auto; width: 600px;
+	margin: 0px auto;
+	border: 1px solid black;
+	padding: 20px;
+}
+
+h1 {
+	margin-top: 0px;
+}
+
+.center {
+	text-align: center;
+}
+
+.right {
+	text-align: right;
+}
+
+.description {
+	display: inline-block; vertical-align: top;
+}
+
+.row {
+	display: table-row;
+}
+
+label, input {
+	display: table-cell;
+}
+
+input[type='submit']{
+	background: linear-gradient(#FF8080, #FF0000);
+	border: 1px solid #B20000;
+	border-radius: 3px;
+	font-weight: bold;
+}
+
+.border_top {
+	border-top: 1px solid black;
+	padding-top: 5px;
+}
+
+.green {
+	color: green;
+}
+
+.red {
+	color: red;
+}

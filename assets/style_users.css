@@ -1,0 +1,83 @@
+* {
+	font-family: verdana, arial, sans-serif;
+}
+
+
+#wrapper {
+	height: auto; width: 400px;
+	margin: 0px auto;
+	padding: 0px 20px 20px 20px;
+	border: 1px solid black;
+	text-align: left;
+}
+
+.error {
+	color: red;
+}
+
+.success {
+	color: green;
+}
+
+.row {
+	display: table-row;
+}
+
+label {
+	display: table-cell;
+}
+
+input[type='text'], input[type='password'] {
+	display: table-cell;
+	margin-left: 10px;
+}
+
+.red {
+	color: red;
+}
+
+.green {
+	color: green;
+}
+
+.right {
+	text-align: right;
+}
+
+a.button {
+	text-decoration: none;
+	color: black;
+}
+
+#products {
+	height: auto; width: 810px;
+	margin: 10px auto;
+}
+
+table {
+	border: 2px solid black;
+	border-collapse: collapse;
+	margin: 0px auto;
+}
+
+th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding: 5px;
+	text-align: left;
+}
+
+th.wide {
+	width: 400px;
+}
+
+th.normal {
+	width: 200px;
+}
+
+th.narrow {
+	width: 100px;
+}
+
+th {
+	background-color: #EEEEEE;

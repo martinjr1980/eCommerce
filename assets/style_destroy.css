@@ -1,0 +1,21 @@
+/* style for the 'courses_destroy' view */
+#confirm {
+	height: 200px; width: 350px;
+	margin: 10px auto; padding: 0px 20px;
+	border: 2px solid black;
+}
+
+a.button {
+	text-decoration: none;
+}
+
+button, form {
+	display: inline-block; vertical-align: center;
+}
+
+input[type='submit']{
+	width: 300px;
+	background: linear-gradient(#FF8080, #FF0000);
+	border: 1px solid #B20000;
+	border-radius: 3px;
+}

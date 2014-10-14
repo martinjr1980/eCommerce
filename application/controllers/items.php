@@ -40,24 +40,34 @@ class Items extends CI_Controller {
 
 	public function process()
 	{
-		$this->form_validation->set_rules('name', 'Name', 'trim|required');
-		$this->form_validation->set_rules('address', 'Address', 'trim|required');
-		$this->form_validation->set_rules('credit_card', 'Credit Card Number', 'trim|required');
-		if($this->form_validation->run())
-		{
-			redirect('/items/success');
-		}
-		else
-		{
-			$this->session->set_flashdata('errors', validation_errors());
-			redirect('/items/yourcart');
-		}
+		redirect('/items/success');
 	}
 
 	public function success()
 	{
 		$this->load->view('items_success');
-		$this->session->sess_destroy();
+	}
+
+	public function addProduct()
+	{
+		$product_info = $this->input->post();
+		$this->Item->addProduct($product_info);
+		$this->session->set_flashdata('message', 'PRODUCT SUCCESSFULLY ADDED TO DATABASE!');
+		redirect('/users/admin');
+	}
+
+	public function destroy($id)
+	{
+		$get_data['items'] = $this->Item->getItems();
+		$get_data['id'] = $id;
+		$this->load->view('items_destroy', $get_data);
+	}
+
+	public function remove($id)
+	{
+		$this->Item->removeProduct($id);
+		$this->session->set_flashdata('messages', 'Successfully deleted a product!');
+		redirect('/users/admin');
 	}
 }
 

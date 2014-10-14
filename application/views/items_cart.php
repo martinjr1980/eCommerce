@@ -3,7 +3,7 @@
 <head>
 	<meta charset='utf-8'>
 	<title>Items Home Page</title>
-	<link rel="stylesheet" type="text/css" href="/assets/style2.css">
+	<link rel="stylesheet" type="text/css" href="/assets/style_items.css">
 </head>
 <body>
 	<div id='wrapper'>

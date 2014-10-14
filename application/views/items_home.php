@@ -3,7 +3,7 @@
 <head>
 	<meta charset='utf-8'>
 	<title>Items Home Page</title>
-	<link rel="stylesheet" type="text/css" href="/assets/style.css">
+	<link rel="stylesheet" type="text/css" href="/assets/style_items_home.css">
 </head>
 <body>
 	<div id='wrapper'>
@@ -17,6 +17,8 @@
 		?>
 		<h1>J-Mart: Home of the Best Electronics!</h1>
 		<p class='right' ><a href='/items/yourcart'>View Cart (<?= $total; ?>)</a></p>
+		<h3 class='green right'>Welcome back <?= $this->session->userdata('first_name'); ?>!</h3>
+		<p class='right'><button><a class='button' href='/users/logout'>Log Out</a></button></p>
 		<?php
 			foreach($items as $item)
 			{
